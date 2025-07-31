@@ -7,5 +7,7 @@ vim.lsp.enable('html')
 vim.lsp.enable('java_language_server')
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('nginx_language_server')
+vim.lsp.enable('terraformls')
 vim.lsp.enable('ts_ls')
+vim.lsp.enable('yamlls')
 
