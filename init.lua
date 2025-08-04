@@ -1,6 +1,9 @@
 vim.g.mapleader = ' '
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
-require('config')
 require('plugins')
 require('lazy-mgr')
-require('lsp-setup')
+require('lsp-config')
+require('user_cfg')
+
