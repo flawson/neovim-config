@@ -10,10 +10,10 @@ return {
     },
     config = function()
         require('blink.cmp').setup({
-            keymap = {
-                ['<C-y>'] = {},
-                ['<M-y>'] = {'select_and_accept'},
-            },
+--            keymap = {
+--                ['<C-y>'] = {},
+--                ['<M-y>'] = {'select_and_accept'},
+--            },
        })
     end,
 }
