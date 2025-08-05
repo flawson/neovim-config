@@ -14,3 +14,6 @@ vim.o.shiftwidth = 0
 -- Set tabs to be 4 characters long
 vim.o.tabstop = 4
 
+-- Disable line wrap
+vim.o.wrap = false
+
