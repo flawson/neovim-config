@@ -6,6 +6,7 @@ vim.o.mouse = ''
 
 -- Display line numbers
 vim.o.number = true
+vim.o.rnu = true
 
 -- Set shiftwidth to match tabstop
 vim.o.shiftwidth = 0

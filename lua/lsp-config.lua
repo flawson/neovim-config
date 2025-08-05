@@ -1,4 +1,12 @@
 -- LSP Setup calls (if needed for given LSP)
+require('lspconfig').gopls.setup({
+    settings = {
+        gopls = {
+            completeUnimported = true,
+        },
+    },
+})
+
 require('lspconfig').lua_ls.setup({
     on_init = function(client)
         if client.workspace_folders then

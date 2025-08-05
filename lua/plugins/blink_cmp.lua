@@ -12,7 +12,7 @@ return {
         require('blink.cmp').setup({
             keymap = {
                 ['<C-y>'] = {},
-                ['<CR>'] = {'select_and_accept'},
+                ['<M-y>'] = {'select_and_accept'},
             },
        })
     end,

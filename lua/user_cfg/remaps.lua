@@ -24,6 +24,9 @@ vim.keymap.set('n', '<leader>wh', '<C-w>h', {desc = 'switch window left'})
 vim.keymap.set('n', '<leader>wj', '<C-w>j', {desc = 'switch window down'})
 vim.keymap.set('n', '<leader>wk', '<C-w>k', {desc = 'switch window up'})
 vim.keymap.set('n', '<leader>wl', '<C-w>l', {desc = 'switch window right'})
+vim.keymap.set('n', '<leader>wv', '<C-w>v', {desc = 'split window vertically'})
+vim.keymap.set('n', '<leader>ws', '<C-w>s', {desc = 'split window horizontally'})
+vim.keymap.set('n', '<leader>w=', '<C-w>=', {desc = 'resize windows equally'})
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', {desc = 'exit terminal mode'})
 
 -- harpoon
