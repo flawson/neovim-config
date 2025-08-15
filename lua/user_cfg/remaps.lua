@@ -2,7 +2,6 @@
 local hmark = require('harpoon.mark')
 local hui = require('harpoon.ui')
 local tele_builtin = require('telescope.builtin')
-local nt_api = require('nvim-tree.api')
 -- imports - end
 
 -- helper functions
@@ -17,7 +16,9 @@ vim.keymap.set('n', '<leader>t', function() vim.cmd('belowright terminal') end, 
 
 -- diagnostics
 --vim.keymap.set('n', '<leader>ld', diag_report, {desc = '[l]ist [d]iagnostics'})
-vim.keymap.set('n', '<leader>ld', vim.diagnostic.setloclist, {desc = '[l]ist [d]iagnostics'})
+vim.keymap.set('n', '<leader>dl', vim.diagnostic.setloclist, {desc = '[d]iagnostics [l]ist'})
+--vim.keymap.set('n', '<leader>dn', vim.diagnostic.setloclist, {desc = '[d]iagnostics [n]ext'})
+--vim.keymap.set('n', '<leader>dp', vim.diagnostic.setloclist, {desc = '[d]iagnostics [p]revious'})
 
 -- window movement
 vim.keymap.set('n', '<leader>wh', '<C-w>h', {desc = 'switch window left'})
@@ -38,12 +39,11 @@ vim.keymap.set('n', '<leader>hj', hui.nav_next, {desc = '[h]arpoon nav next [j]'
 vim.keymap.set('n', '<leader>hk', hui.nav_prev, {desc = '[h]arpoon nav prev [k]'})
 
 -- nvim-tree
-vim.keymap.set('n', '<leader>.', nt_api.tree.change_root_to_node, {desc = 'nvim-tree set current directory'})
-vim.keymap.set('n', '<leader>pd', nt_api.tree.change_root_to_parent, {desc = 'nvim-tree goto [p]arent [d]irectory'})
---vim.keymap.set('n', '<leader>..', nt_api.node.navigate.parent, {desc = 'nvim-tree set current dir to parent'})
+-- Keymaps are stored within the nvim-tree.lua plugin spec specifically to handle the
+-- on_attach for the file tree
 
 -- telescope
-vim.keymap.set('n', '<leader>ff', tele_builtin.find_files, { desc = 'Telescope [f]ind files' })
+vim.keymap.set('n', '<leader>ff', tele_builtin.find_files, { desc = 'Telescope [f]ind [f]iles' })
 vim.keymap.set('n', '<leader>fg', tele_builtin.live_grep, { desc = 'Telescope [f]ind live [g]rep' })
 vim.keymap.set('n', '<leader>fp', tele_builtin.git_files, { desc = 'Telescope [f]ind in [p]roject' })
 vim.keymap.set('n', '<leader>fm', tele_builtin.keymaps, { desc = 'Telescope [f]ind key[m]aps' })
