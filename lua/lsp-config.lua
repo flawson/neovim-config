@@ -84,7 +84,7 @@ vim.lsp.enable('nginx_language_server')
 -- Perl
 vim.lsp.enable('perlls')
 -- Python
-vim.lsp.enable('jedi_language_server')
+vim.lsp.enable('pyright')
 -- Ruby
 vim.lsp.enable('ruby_lsp')
 -- Rust
