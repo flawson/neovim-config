@@ -5,7 +5,8 @@ return {
     },
     config = function()
         local nt_api = require('nvim-tree.api')
-        require('nvim-tree').setup({
+        local nt = require('nvim-tree')
+        nt.setup({
             diagnostics = {
                 enable = true,
                 show_on_dirs = true,
@@ -65,6 +66,14 @@ return {
                 vim.keymap.set('n', 'V',     nt_api.node.open.vertical,              keymap_opts('Open: Vertical Split'))
                 --
                 -- Tree appearance and expansion/collapsing
+                vim.keymap.set(
+                    'n',
+                    '~',
+                    function ()
+                        local home = os.getenv('HOME')
+                        nt.change_dir(home)
+                    end,
+                    keymap_opts('set current directory to user home'))
                 vim.keymap.set('n', '>',     nt_api.tree.change_root_to_node,        keymap_opts('set current directory'))
                 vim.keymap.set('n', '<',     nt_api.tree.change_root_to_parent,      keymap_opts('set parent directory'))
                 vim.keymap.set('n', 'q',     nt_api.tree.close,                      keymap_opts('Close'))
