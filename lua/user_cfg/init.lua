@@ -1,3 +1,4 @@
-require('user_cfg.remaps')
+-- Plugin-agnostic settings (base config w/o plugins...)
 require('user_cfg.options')
+require('user_cfg.remaps')
 
