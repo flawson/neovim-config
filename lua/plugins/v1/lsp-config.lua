@@ -8,27 +8,31 @@ require('lspconfig').gopls.setup({
 })
 
 require('lspconfig').lua_ls.setup({
-  settings = {
-    Lua = {
-      completion = {
-        -- Set to "Replace" to get snippets instead of just function completion
-        callSnippet = 'Replace',
-      },
-      runtime = {
-        version = 'LuaJIT',
-      },
-      diagnostics = {
-        globals = {'vim'},
-      },
-      workspace = {
-        -- Make the language server aware of Neovim's runtime files
-        library = {
-            vim.api.nvim_get_runtime_file("", true),
-            "${3rd}/luv/library",
+    settings = {
+        Lua = {
+            completion = {
+                -- Set to "Replace" to get snippets instead of just function completion
+                callSnippet = 'Replace',
+            },
+            runtime = {
+                version = 'LuaJIT',
+            },
+            diagnostics = {
+                globals = {'vim'},
+            },
+            workspace = {
+                checkThirdParty = 'Disable',
+                -- Make the language server aware of Neovim's runtime files
+                library = vim.tbl_deep_extend(
+                    'force',
+                    vim.api.nvim_get_runtime_file("", true),
+                    {
+                        "${3rd}/luv/library",
+                    }
+                ),
+            }
         }
-      }
     }
-  }
 })
 
 -- LSP Setup calls - end
