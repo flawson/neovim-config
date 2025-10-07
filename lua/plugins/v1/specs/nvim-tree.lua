@@ -32,6 +32,15 @@ return {
                     },
                 },
             },
+            filters = {
+                git_ignored = false,
+                dotfiles = false,
+                git_clean = false,
+                no_buffer = false,
+                no_bookmark = false,
+                custom = {},
+                exclude = {},
+            },
             on_attach = function(bufnr)
                 -- local function to populate default keymap config values from nvim-tree.keymap
                 local keymap_opts = function(desc)
