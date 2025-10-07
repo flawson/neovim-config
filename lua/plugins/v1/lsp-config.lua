@@ -38,6 +38,7 @@ require('lspconfig').lua_ls.setup({
 -- LSP Setup calls - end
 
 -- LSP Enables
+
 -- Ansible
 vim.lsp.enable('ansiblels')
 -- Bash
