@@ -6,9 +6,6 @@ return {
   },
   config = function()
     require("go").setup({
-        lsp_cfg = {
-            capabilities = false,
-        },
     })
     local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
     vim.api.nvim_create_autocmd("BufWritePre", {

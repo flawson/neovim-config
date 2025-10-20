@@ -1,5 +1,5 @@
 -- LSP Setup calls (if needed for given LSP)
-require('lspconfig').gopls.setup({
+vim.lsp.config('gopls', {
     settings = {
         gopls = {
             completeUnimported = true,
@@ -7,7 +7,7 @@ require('lspconfig').gopls.setup({
     },
 })
 
-require('lspconfig').lua_ls.setup({
+vim.lsp.config('lua_ls', {
     settings = {
         Lua = {
             completion = {
@@ -35,6 +35,11 @@ require('lspconfig').lua_ls.setup({
     }
 })
 
+vim.lsp.config('terraformls', {
+    cmd = {'terraform-ls', 'serve'},
+    filetypes = {'terraform', 'terraform-vars'},
+    root_markers = {'.terraform'},
+})
 -- LSP Setup calls - end
 
 -- LSP Enables
