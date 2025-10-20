@@ -8,12 +8,14 @@ return (
                 ensure_installed = {
                     "c",
                     "go",
+                    'hcl',
                     "javascript",
                     "lua",
                     "markdown",
                     "markdown_inline",
                     "python",
                     "query",
+                    'terraform',
                     "typescript",
                     "vim",
                     "vimdoc",
@@ -24,6 +26,8 @@ return (
                     enable = true,
                     additional_vim_regex_highlighting = false,
                 },
+                modules = {},
+                ignore_install = {},
             })
         end,
     }
