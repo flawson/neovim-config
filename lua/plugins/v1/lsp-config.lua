@@ -52,6 +52,8 @@ vim.lsp.enable('bashls')
 vim.lsp.enable('clangd')
 -- CMake
 vim.lsp.enable('cmake')
+-- CSS
+vim.lsp.enable('cssls')
 -- Docker Compose
 vim.lsp.enable('docker_compose_language_service')
 -- Docker
