@@ -1,15 +1,11 @@
 -- imports
 
-
 -- general
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-vim.keymap.set('n', '<leader>t', function() vim.cmd('botright split | resize 12 | terminal') end, {desc = 'open [t]erminal'})
+vim.keymap.set('n', '<leader>s', function() vim.cmd('botright split | resize 12 | terminal') end, {desc = 'open [s]hell (terminal)'})
 
 -- diagnostics
---vim.keymap.set('n', '<leader>ld', diag_report, {desc = '[l]ist [d]iagnostics'})
 vim.keymap.set('n', '<leader>dl', vim.diagnostic.setloclist, {desc = '[d]iagnostics [l]ist'})
---vim.keymap.set('n', '<leader>dn', vim.diagnostic.setloclist, {desc = '[d]iagnostics [n]ext'})
---vim.keymap.set('n', '<leader>dp', vim.diagnostic.setloclist, {desc = '[d]iagnostics [p]revious'})
 
 -- window movement
 vim.keymap.set('n', '<leader>wh', '<C-w>h', {desc = 'switch window left'})
@@ -24,4 +20,11 @@ vim.keymap.set('n', '<leader>wv', '<C-w>v', {desc = 'split window vertically'})
 vim.keymap.set('n', '<leader>ws', '<C-w>s', {desc = 'split window horizontally'})
 vim.keymap.set('n', '<leader>w=', '<C-w>=', {desc = 'resize windows equally'})
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', {desc = 'exit terminal mode'})
+
+-- tabpages
+vim.keymap.set('n', '<leader>tt', function() vim.cmd('tabnew') end, {desc = '[t]ab create [t]'})
+vim.keymap.set('n', '<leader>tn', function() vim.cmd('tabn') end, {desc = '[t]ab [n]ext'})
+vim.keymap.set('n', '<leader>tp', function() vim.cmd('tabp') end, {desc = '[t]ab [p]revious'})
+vim.keymap.set('n', '<leader>tm', function() vim.cmd('tabm') end, {desc = '[t]ab [m]ove'})
+
 

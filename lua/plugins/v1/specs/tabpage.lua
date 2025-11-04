@@ -1,0 +1,3 @@
+return {
+    'flawson/tabpage.nvim',
+}
