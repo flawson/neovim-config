@@ -20,6 +20,7 @@ vim.keymap.set('n', '<leader>wv', '<C-w>v', {desc = 'split window vertically'})
 vim.keymap.set('n', '<leader>ws', '<C-w>s', {desc = 'split window horizontally'})
 vim.keymap.set('n', '<leader>w=', '<C-w>=', {desc = 'resize windows equally'})
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', {desc = 'exit terminal mode'})
+vim.keymap.set('n', '<leader>fe', vim.cmd.Ex, {desc = '[f]ile [e]xplorer'})
 
 -- tabpages
 vim.keymap.set('n', '<leader>tt', function() vim.cmd('tabnew') end, {desc = '[t]ab create [t]'})

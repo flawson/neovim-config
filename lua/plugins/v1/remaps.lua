@@ -19,7 +19,7 @@ local tele_builtin = require('telescope.builtin')
 -- nvim-tree
 -- Keymaps (besides open) are stored within the nvim-tree.lua plugin spec
 -- specifically to handle the on_attach for the file tree
-vim.keymap.set('n', '<leader>fe', vim.cmd.NvimTreeOpen, { desc = '[f]ile [e]xplorer' })
+-- vim.keymap.set('n', '<leader>fe', vim.cmd.NvimTreeOpen, { desc = '[f]ile [e]xplorer' })
 
 -- telescope
 vim.keymap.set('n', '<leader>ff', tele_builtin.find_files, { desc = 'Telescope [f]ind [f]iles' })
