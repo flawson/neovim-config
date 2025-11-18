@@ -1,5 +1,14 @@
 -- imports
 
+-- local functions
+local open_window = function(direction)
+    if direction == nil or direction == 'vertical' then
+        vim.api.nvim_open_win(0, true, {split='right', win=0})
+    elseif direction == 'horizontal' then
+        vim.api.nvim_open_win(0, true, {split='below', win=0})
+    end
+end
+
 -- general
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>s', function() vim.cmd('botright split | resize 12 | terminal') end, {desc = 'open [s]hell (terminal)'})
@@ -16,8 +25,10 @@ vim.keymap.set('n', '<leader>wk', '<C-w>k', {desc = 'switch window up'})
 vim.keymap.set('n', '<leader>wK', '<C-w>K', {desc = 'move window up'})
 vim.keymap.set('n', '<leader>wl', '<C-w>l', {desc = 'switch window right'})
 vim.keymap.set('n', '<leader>wL', '<C-w>L', {desc = 'move window right'})
-vim.keymap.set('n', '<leader>wv', '<C-w>v', {desc = 'split window vertically'})
-vim.keymap.set('n', '<leader>ws', '<C-w>s', {desc = 'split window horizontally'})
+--vim.keymap.set('n', '<leader>wv', '<C-w>v', {desc = 'split window vertically'})
+vim.keymap.set('n', '<leader>wv', function() open_window('vertical') end, {desc = 'split window vertically'})
+--vim.keymap.set('n', '<leader>ws', '<C-w>s', {desc = 'split window horizontally'})
+vim.keymap.set('n', '<leader>ws', function() open_window('horizontal') end, {desc = 'split window horizontally'})
 vim.keymap.set('n', '<leader>w=', '<C-w>=', {desc = 'resize windows equally'})
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', {desc = 'exit terminal mode'})
 vim.keymap.set('n', '<leader>fe', vim.cmd.Ex, {desc = '[f]ile [e]xplorer'})
