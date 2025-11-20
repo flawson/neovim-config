@@ -40,6 +40,13 @@ vim.lsp.config('terraformls', {
     filetypes = {'terraform', 'terraform-vars'},
     root_markers = {'.terraform'},
 })
+vim.api.nvim_create_autocmd({'BufWritePre'}, {
+    pattern = {'*.tf', '*.tfvars'},
+    callback = function()
+        vim.lsp.buf.format()
+    end
+})
+
 -- LSP Setup calls - end
 
 -- LSP Enables
