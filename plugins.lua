@@ -61,6 +61,7 @@ require("lazy").setup({
 			current_line_blame_opts = {
 				delay = 100,
 			},
+			current_line_blame_formatter = "<author> <author_time:%R> (<abbrev_sha>) - <summary>",
 		},
 	},
 
@@ -728,11 +729,22 @@ require("lazy").setup({
 			{ "<leader>nu", "<cmd>Neominimap Unfocus<cr>", desc = "Unfocus minimap" },
 			{ "<leader>ns", "<cmd>Neominimap ToggleFocus<cr>", desc = "Switch focus on minimap" },
 		},
-		init = function()
-			vim.g.neominimap = {
-				auto_enable = true,
-			}
-		end,
+	},
+
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"MunifTanjim/nui.nvim",
+			"nvim-tree/nvim-web-devicons",
+		},
+		opts = {
+			filesystem = {
+				filtered_items = {
+					visible = true,
+				},
+			},
+		},
 	},
 
 	-- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the

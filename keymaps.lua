@@ -23,7 +23,8 @@ vim.diagnostic.config({
 	jump = { float = true },
 })
 
-vim.keymap.set("n", "<leader>fe", vim.cmd.Explore, { desc = "Open [F]ile [E]xplorer" })
+vim.keymap.set("n", "<leader>fe", vim.cmd.Neotree, { desc = "Open [F]ile [E]xplorer" })
+vim.keymap.set("n", "<leader>t", vim.cmd("botright split | resize 12 | terminal"), { desc = "Open [T]erminal" })
 
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
@@ -36,8 +37,8 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- Split window keymaps
-vim.keymap.set("n", "<leader>wv", "<C-w><C-v>", { desc = "Open split [w]indow [v]ertically" })
-vim.keymap.set("n", "<leader>ws", "<C-w><C-s>", { desc = "Open split [w]indow [v]ertically" })
+vim.keymap.set("n", "<leader>wv", "<C-w><C-v>", { desc = "Open split window vertically" })
+vim.keymap.set("n", "<leader>ws", "<C-w><C-s>", { desc = "Open split window horizontally" })
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -47,6 +48,16 @@ vim.keymap.set("n", "<leader>wh", "<C-w><C-h>", { desc = "Move focus to the left
 vim.keymap.set("n", "<leader>wl", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<leader>wj", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<leader>wk", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+vim.keymap.set("n", "<leader>wH", "<C-w><C-H>", { desc = "Move window to the left" })
+vim.keymap.set("n", "<leader>wL", "<C-w><C-L>", { desc = "Move window to the right" })
+vim.keymap.set("n", "<leader>wJ", "<C-w><C-J>", { desc = "Move window down" })
+vim.keymap.set("n", "<leader>wK", "<C-w><C-K>", { desc = "Move window up" })
+
+vim.keymap.set("n", "<leader>pp", vim.cmd.Tabnew, { desc = "New tabpage" })
+vim.keymap.set("n", "<leader>ph", vim.cmd.Tabnew, { desc = "Previous tabpage" })
+vim.keymap.set("n", "<leader>pl", vim.cmd.Tabnew, { desc = "Next tabpage" })
+vim.keymap.set("n", "<leader>pH", vim.cmd.Tabnew, { desc = "Move tabpage left" })
+vim.keymap.set("n", "<leader>pL", vim.cmd.Tabnew, { desc = "Move tabpage right" })
 
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
 -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
