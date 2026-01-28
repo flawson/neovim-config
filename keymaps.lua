@@ -24,7 +24,9 @@ vim.diagnostic.config({
 })
 
 vim.keymap.set("n", "<leader>fe", vim.cmd.Neotree, { desc = "Open [F]ile [E]xplorer" })
-vim.keymap.set("n", "<leader>t", vim.cmd("botright split | resize 12 | terminal"), { desc = "Open [T]erminal" })
+vim.keymap.set("n", "<leader>t", function()
+	vim.cmd("rightbelow 12split | setlocal winfixheight | terminal")
+end, { desc = "Open [T]erminal" })
 
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
