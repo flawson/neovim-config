@@ -483,7 +483,7 @@ require("lazy").setup({
 				-- Disable "format_on_save lsp_fallback" for languages that don't
 				-- have a well standardized coding style. You can add additional
 				-- languages here or re-enable it for the disabled ones.
-				local disable_filetypes = { c = true, cpp = true }
+				local disable_filetypes = { c = true, cpp = true, go = true }
 				if disable_filetypes[vim.bo[bufnr].filetype] then
 					return nil
 				else
@@ -744,6 +744,9 @@ require("lazy").setup({
 					visible = true,
 				},
 			},
+			window = {
+				width = 30,
+			},
 		},
 	},
 
@@ -754,6 +757,44 @@ require("lazy").setup({
 		end,
 	},
 
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		requires = { "nvim-lua/plenary.nvim" },
+		init = function()
+			local harpoon = require("harpoon")
+			harpoon:setup({})
+
+			vim.keymap.set("n", "<leader>ha", function()
+				harpoon:list():add()
+			end, { desc = "harpoon add to list" })
+			vim.keymap.set("n", "<leader>hq", function()
+				harpoon.ui:toggle_quick_menu(harpoon:list())
+			end, { desc = "harpoon quick menu" })
+			vim.keymap.set("n", "<leader>hn", function()
+				harpoon:list():next()
+			end, { desc = "harpoon next" })
+			vim.keymap.set("n", "<leader>hp", function()
+				harpoon:list():prev()
+			end, { desc = "harpoon prev" })
+			vim.keymap.set("n", "<leader>h1", function()
+				harpoon:list():select(1)
+			end, { desc = "harpoon select 1" })
+			vim.keymap.set("n", "<leader>h2", function()
+				harpoon:list():select(2)
+			end, { desc = "harpoon select 2" })
+			vim.keymap.set("n", "<leader>h3", function()
+				harpoon:list():select(3)
+			end, { desc = "harpoon select 3" })
+			vim.keymap.set("n", "<leader>h4", function()
+				harpoon:list():select(4)
+			end, { desc = "harpoon select 4" })
+		end,
+	},
+
+	{
+		"fatih/vim-go",
+	},
 	-- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
 	-- init.lua. If you want these files, they are in the repository, so you can just download them and
 	-- place them in the correct locations.
