@@ -613,6 +613,11 @@ require("lazy").setup({
 				styles = {
 					comments = { italic = false }, -- Disable italics in comments
 				},
+				on_highlights = function(hl, colors)
+					hl.ColorColumn = {
+						bg = "#608794",
+					}
+				end,
 			})
 
 			-- Load the colorscheme here.

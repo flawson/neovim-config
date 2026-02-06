@@ -68,6 +68,9 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- File markers for ideal new lines
+vim.o.colorcolumn = "80,100"
+
 -- Tab settings
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
