@@ -54,6 +54,22 @@ vim.keymap.set("n", "<leader>wH", "<C-w><C-H>", { desc = "Move window to the lef
 vim.keymap.set("n", "<leader>wL", "<C-w><C-L>", { desc = "Move window to the right" })
 vim.keymap.set("n", "<leader>wJ", "<C-w><C-J>", { desc = "Move window down" })
 vim.keymap.set("n", "<leader>wK", "<C-w><C-K>", { desc = "Move window up" })
+vim.keymap.set("n", "<leader>w<", function()
+	local count = vim.v.count1
+	vim.cmd("vert res -" .. count)
+end, { desc = "Reduce window width" })
+vim.keymap.set("n", "<leader>w>", function()
+	local count = vim.v.count1
+	vim.cmd("vert res +" .. count)
+end, { desc = "Increase window width" })
+vim.keymap.set("n", "<leader>w-", function()
+	local count = vim.v.count1
+	vim.cmd("res -" .. count)
+end, { desc = "Reduce window height" })
+vim.keymap.set("n", "<leader>w+", function()
+	local count = vim.v.count1
+	vim.cmd("res +" .. count)
+end, { desc = "Increase window height" })
 
 vim.keymap.set("n", "<leader>pp", vim.cmd.Tabnew, { desc = "New tabpage" })
 vim.keymap.set("n", "<leader>ph", vim.cmd.Tabnew, { desc = "Previous tabpage" })
