@@ -71,11 +71,12 @@ vim.keymap.set("n", "<leader>w+", function()
 	vim.cmd("res +" .. count)
 end, { desc = "Increase window height" })
 
-vim.keymap.set("n", "<leader>pp", vim.cmd.Tabnew, { desc = "New tabpage" })
-vim.keymap.set("n", "<leader>ph", vim.cmd.Tabnew, { desc = "Previous tabpage" })
-vim.keymap.set("n", "<leader>pl", vim.cmd.Tabnew, { desc = "Next tabpage" })
-vim.keymap.set("n", "<leader>pH", vim.cmd.Tabnew, { desc = "Move tabpage left" })
-vim.keymap.set("n", "<leader>pL", vim.cmd.Tabnew, { desc = "Move tabpage right" })
+-- TODO: Revisit when i want to work with tabpages and copilot
+-- vim.keymap.set("n", "<leader>pp", vim.cmd.Tabnew, { desc = "New tabpage" })
+-- vim.keymap.set("n", "<leader>ph", vim.cmd.Tabnew, { desc = "Previous tabpage" })
+-- vim.keymap.set("n", "<leader>pl", vim.cmd.Tabnew, { desc = "Next tabpage" })
+-- vim.keymap.set("n", "<leader>pH", vim.cmd.Tabnew, { desc = "Move tabpage left" })
+-- vim.keymap.set("n", "<leader>pL", vim.cmd.Tabnew, { desc = "Move tabpage right" })
 
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
 -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })

@@ -397,8 +397,33 @@ require("lazy").setup({
 			local servers = {
 				clangd = {},
 				gopls = {},
+				-- jedi_language_server = {},
 				pyright = {},
-				-- rust_analyzer = {},
+				-- pylsp = {
+				-- 	settings = {
+				-- 		pylsp = {
+				-- 			plugins = {
+				-- 				rope_completion = { enabled = true },
+				-- 				rope_autoimport = { enabled = false },
+				-- 				rope = { enabled = true },
+				-- 				pydocstyle = {
+				-- 					enabled = true,
+				-- 					convention = "pep257",
+				-- 				},
+				-- 				pyflakes = { enabled = true },
+				-- 				pycodestyle = { enabled = true },
+				-- 				pylsp_mypy = { enabled = false },
+				-- 				pyright = { enabled = false },
+				-- 				jedi_completion = { enabled = false },
+				-- 				jedi_hover = { enabled = false },
+				-- 				jedi_references = { enabled = true },
+				-- 				jedi_signature_help = { enabled = true },
+				-- 				jedi_symbols = { enabled = false },
+				-- 			},
+				-- 		},
+				-- 	},
+				-- },
+				rust_analyzer = {},
 				--
 				-- Some languages (like typescript) have entire language plugins that can be useful:
 				--    https://github.com/pmizio/typescript-tools.nvim
@@ -795,6 +820,23 @@ require("lazy").setup({
 				harpoon:list():select(4)
 			end, { desc = "harpoon select 4" })
 		end,
+	},
+
+	{
+		"linux-cultist/venv-selector.nvim",
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+			version = "*",
+			dependencies = { "nvim-lua/plenary.nvim" },
+		},
+		ft = "python",
+		keys = {
+			{ "<leader>vv", vim.cmd.VenvSelect },
+		},
+		opts = {
+			options = {},
+			search = {},
+		},
 	},
 
 	{
