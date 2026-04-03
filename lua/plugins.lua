@@ -30,7 +30,8 @@ rtp:prepend(lazypath)
 -- ======================================================
 require("lazy").setup({
 	-- NOTE: Plugins can be added via a link or github org/name. To run setup automatically, use `opts = {}`
-	{ "NMAC427/guess-indent.nvim", opts = {} },
+	--
+	-- { "NMAC427/guess-indent.nvim", opts = {} },
 
 	-- Alternatively, use `config = function() ... end` for full control over the configuration.
 	-- If you prefer to call `setup` explicitly, use:
@@ -190,6 +191,7 @@ require("lazy").setup({
 			vim.keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })
 			vim.keymap.set("n", "<leader>fc", builtin.commands, { desc = "[F]ind [C]ommands" })
 			vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
+			vim.keymap.set("n", "<leader>fo", builtin.vim_options, { desc = "[F]ind [O]ptions" })
 
 			-- This runs on LSP attach per buffer (see main LSP attach function in 'neovim/nvim-lspconfig' config for more info,
 			-- it is better explained there). This allows easily switching between pickers if you prefer using something else!
@@ -716,6 +718,7 @@ require("lazy").setup({
 				"vimdoc",
 				"go",
 				"python",
+				"perl",
 			}
 			require("nvim-treesitter.install").install(filetypes)
 			vim.api.nvim_create_autocmd("FileType", {
