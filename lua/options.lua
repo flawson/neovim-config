@@ -3,7 +3,7 @@
 -- See `:help vim.o`
 -- ======================================================
 vim.o.number = true
-vim.o.relativenumber = true
+-- vim.o.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = ""

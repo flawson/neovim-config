@@ -403,28 +403,28 @@ require("lazy").setup({
 				-- jedi_language_server = {},
 				pyright = {},
 				-- pylsp = {
-				-- 	settings = {
-				-- 		pylsp = {
-				-- 			plugins = {
-				-- 				rope_completion = { enabled = true },
-				-- 				rope_autoimport = { enabled = false },
-				-- 				rope = { enabled = true },
-				-- 				pydocstyle = {
-				-- 					enabled = true,
-				-- 					convention = "pep257",
-				-- 				},
-				-- 				pyflakes = { enabled = true },
-				-- 				pycodestyle = { enabled = true },
-				-- 				pylsp_mypy = { enabled = false },
-				-- 				pyright = { enabled = false },
-				-- 				jedi_completion = { enabled = false },
-				-- 				jedi_hover = { enabled = false },
-				-- 				jedi_references = { enabled = true },
-				-- 				jedi_signature_help = { enabled = true },
-				-- 				jedi_symbols = { enabled = false },
-				-- 			},
-				-- 		},
-				-- 	},
+				--     settings = {
+				--         pylsp = {
+				--             plugins = {
+				--                 rope_completion = { enabled = true },
+				--                 rope_autoimport = { enabled = false },
+				--                 rope = { enabled = true },
+				--                 pydocstyle = {
+				--                     enabled = true,
+				--                     convention = "pep257",
+				--                 },
+				--                 pyflakes = { enabled = true },
+				--                 pycodestyle = { enabled = true },
+				--                 pylsp_mypy = { enabled = false },
+				--                 pyright = { enabled = false },
+				--                 jedi_completion = { enabled = false },
+				--                 jedi_hover = { enabled = false },
+				--                 jedi_references = { enabled = true },
+				--                 jedi_signature_help = { enabled = true },
+				--                 jedi_symbols = { enabled = false },
+				--             },
+				--         },
+				--     },
 				-- },
 				rust_analyzer = {},
 				--
@@ -606,7 +606,6 @@ require("lazy").setup({
 				-- Optionally, set `auto_show = true` to show the documentation after a delay.
 				documentation = { auto_show = false, auto_show_delay_ms = 500 },
 			},
-
 			sources = {
 				default = { "lsp", "path", "snippets" },
 			},
@@ -645,6 +644,9 @@ require("lazy").setup({
 					hl.ColorColumn = {
 						bg = "#608794",
 					}
+					-- hl.NormalFloat = { bg = colors.bg_float, fg = colors.fg }
+					-- hl.FloatBorder = { bg = colors.bg_float, fg = colors.border_highlight }
+					-- hl.FloatTitle = { bg = colors.bg_float, fg = colors.title }
 				end,
 			})
 
