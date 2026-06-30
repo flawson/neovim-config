@@ -8,5 +8,5 @@ vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
 
 vim.g.neominimap = {
-	auto_enable = true,
+    auto_enable = true,
 }
