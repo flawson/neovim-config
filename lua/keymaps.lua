@@ -58,7 +58,7 @@ vim.keymap.set("n", "<leader>wx", "<C-w>x", { desc = "Exchange window (with id i
 vim.keymap.set("n", "<leader>w-", "<C-w>-", { desc = "Reduce window height" })
 vim.keymap.set("n", "<leader>w+", "<C-w>+", { desc = "Increase window height" })
 vim.keymap.set("n", "<leader>w<", "<C-w><", { desc = "Reduce window width" })
-vim.keymap.set("n", "<leader>w", "<C-w>>", { desc = "Increase window width" })
+vim.keymap.set("n", "<leader>w>", "<C-w>>", { desc = "Increase window width" })
 
 vim.keymap.set("n", "<leader>w|", "<C-w>|", { desc = "Set window width (highest if no val)" })
 vim.keymap.set("n", "<leader>w_", "<C-w>_", { desc = "Set window height (widest if no val)" })
