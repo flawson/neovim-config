@@ -39,8 +39,8 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- Split window keymaps (using :sp and vsp respectively)
--- vim.keymap.set("n", "<leader>wv", "<C-w><C-v>", { desc = "Open split window vertically" })
--- vim.keymap.set("n", "<leader>ws", "<C-w><C-s>", { desc = "Open split window horizontally" })
+vim.keymap.set("n", "<leader>wv", "<C-w><C-v>", { desc = "Open split window vertically" })
+vim.keymap.set("n", "<leader>ws", "<C-w><C-s>", { desc = "Open split window horizontally" })
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
