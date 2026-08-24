@@ -772,36 +772,12 @@ require("lazy").setup({
 
     {
         "Isrothy/neominimap.nvim",
-        keys = {
-            -- Global Minimap Controls
-            { "<leader>nm",  "<cmd>Neominimap Toggle<cr>",      desc = "Toggle global minimap" },
-            { "<leader>no",  "<cmd>Neominimap Enable<cr>",      desc = "Enable global minimap" },
-            { "<leader>nc",  "<cmd>Neominimap Disable<cr>",     desc = "Disable global minimap" },
-            { "<leader>nr",  "<cmd>Neominimap Refresh<cr>",     desc = "Refresh global minimap" },
-
-            -- Window-Specific Minimap Controls
-            { "<leader>nwt", "<cmd>Neominimap WinToggle<cr>",   desc = "Toggle minimap for current window" },
-            { "<leader>nwr", "<cmd>Neominimap WinRefresh<cr>",  desc = "Refresh minimap for current window" },
-            { "<leader>nwo", "<cmd>Neominimap WinEnable<cr>",   desc = "Enable minimap for current window" },
-            { "<leader>nwc", "<cmd>Neominimap WinDisable<cr>",  desc = "Disable minimap for current window" },
-
-            -- Tab-Specific Minimap Controls
-            { "<leader>ntt", "<cmd>Neominimap TabToggle<cr>",   desc = "Toggle minimap for current tab" },
-            { "<leader>ntr", "<cmd>Neominimap TabRefresh<cr>",  desc = "Refresh minimap for current tab" },
-            { "<leader>nto", "<cmd>Neominimap TabEnable<cr>",   desc = "Enable minimap for current tab" },
-            { "<leader>ntc", "<cmd>Neominimap TabDisable<cr>",  desc = "Disable minimap for current tab" },
-
-            -- Buffer-Specific Minimap Controls
-            { "<leader>nbt", "<cmd>Neominimap BufToggle<cr>",   desc = "Toggle minimap for current buffer" },
-            { "<leader>nbr", "<cmd>Neominimap BufRefresh<cr>",  desc = "Refresh minimap for current buffer" },
-            { "<leader>nbo", "<cmd>Neominimap BufEnable<cr>",   desc = "Enable minimap for current buffer" },
-            { "<leader>nbc", "<cmd>Neominimap BufDisable<cr>",  desc = "Disable minimap for current buffer" },
-
-            ---Focus Controls
-            { "<leader>nf",  "<cmd>Neominimap Focus<cr>",       desc = "Focus on minimap" },
-            { "<leader>nu",  "<cmd>Neominimap Unfocus<cr>",     desc = "Unfocus minimap" },
-            { "<leader>ns",  "<cmd>Neominimap ToggleFocus<cr>", desc = "Switch focus on minimap" },
-        },
+        config = function()
+            require('neominimap')
+            vim.keymap.set('n', '<leader>mm', '<cmd>Neominimap WinToggle<cr>', { desc = 'Toggle minimap for window' })
+            vim.keymap.set('n', '<leader>mr', '<cmd>Neominimap WinRefresh<cr>', { desc = 'Refresh minimaps globally' })
+            vim.keymap.set('n', '<leader>mf', '<cmd>Neominimap ToggleFocus<cr>', { desc = 'Switch minimap focus' })
+        end,
     },
 
     {
@@ -925,6 +901,23 @@ require("lazy").setup({
 
     {
         "fatih/vim-go",
+    },
+
+    {
+        'axkirillov/unified.nvim',
+        config = function()
+            local unified = require('unified')
+            local nav = require('unified.navigation')
+            unified.setup({
+                file_tree = {
+                    enabled = false,
+                },
+            })
+            vim.keymap.set('n', '<leader>gg', unified.toggle, { desc = 'Unified: toggle git diff' })
+            vim.keymap.set('n', '<leader>gc', unified.pick_commit, { desc = 'Unified: pick base commit' })
+            vim.keymap.set('n', '<leader>gn', nav.next_hunk, { desc = 'Unified: goto next diff' })
+            vim.keymap.set('n', '<leader>gp', nav.previous_hunk, { desc = 'Unified: goto prev diff' })
+        end,
     },
     -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
     -- init.lua. If you want these files, they are in the repository, so you can just download them and
