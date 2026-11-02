@@ -424,7 +424,9 @@ require("lazy").setup({
                     root_markers = { "ansible.cfg", ".ansible-lint", ".ansible.cfg" },
                 },
                 clangd = {},
+                cssls = {},
                 gopls = {},
+                html = {},
                 -- jedi_language_server = {},
                 pyright = {},
                 -- pylsp = {
